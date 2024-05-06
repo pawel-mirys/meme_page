@@ -1,51 +1,77 @@
 import { Request, Response } from 'express';
 import User from '../models/userModel.js';
 import asyncHandler from '../middleware/asyncHandler.js';
+import { NextFunction } from 'connect';
 
-const loginUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('loginUser');
-});
+const loginUser = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('loginUser');
+  }
+);
 
-const registerUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('registerUser');
-});
+const logoutUser = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('logoutUser');
+  }
+);
 
-const deleteUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('deleteUser');
-});
+const registerUser = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('registerUser');
+  }
+);
 
-const editUserProfile = asyncHandler(async (req: Request, res: Response) => {
-  res.send('editUser');
-});
+const deleteUser = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('deleteUser');
+  }
+);
 
-const banUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('banUser');
-});
+const editUserProfile = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('editUser');
+  }
+);
 
-const getUserById = asyncHandler(async (req: Request, res: Response) => {
-  res.send('getUserById');
-});
+const banUser = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('banUser');
+  }
+);
 
-const getUserProfile = asyncHandler(async (req: Request, res: Response) => {
-  res.send('getUserProfile');
-});
+const getUserById = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('getUserById');
+  }
+);
 
-const followUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('followUser');
-});
+const getUserProfile = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('getUserProfile');
+  }
+);
 
-const unfollowUser = asyncHandler(async (req: Request, res: Response) => {
-  res.send('unfollowUser');
-});
+const followUserProfile = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('followUser');
+  }
+);
+
+const unfollowUserProfile = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    res.send('unfollowUser');
+  }
+);
 
 export {
   loginUser,
+  logoutUser,
   registerUser,
   deleteUser,
   editUserProfile,
   banUser,
   getUserById,
   getUserProfile,
-  followUser,
-  unfollowUser,
+  followUserProfile,
+  unfollowUserProfile,
 };
